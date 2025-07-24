@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue chez Domya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="icon" href="WhatsApp Image 2025-07-24 at 15.30.08 copy.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+        }
+        .dumiya-logo {
+            width: 230px;
+            height: auto;
+            margin-bottom: 20px;
+         
+        }
+        
+        body {
+            background-color: rgb(31, 23, 23);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Effets de fond */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.986) 0%, transparent 15%),
+                radial-gradient(circle at 90% 80%, rgba(178, 31, 31, 0.15) 0%, transparent 15%),
+                radial-gradient(circle at 30% 60%, rgba(26, 42, 108, 0.2) 0%, transparent 20%); */
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(230, 225, 225, 0.5);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(107, 90, 90, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        #visiter-dumiya{
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+        }
+        
+        /* Animation de fond */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-size: 4.2rem;
+            margin-bottom: 20px;
+            /* text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4); */
+            
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+            
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #fdbb2d;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .subtitle span {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(253, 187, 45, 0.15);
+            border-radius: 50px;
+            font-weight: 400;
+        }
+        
+        .social-section {
+            margin-top: 50px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #fdbb2d, #b21f1f);
+            border-radius: 2px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 35px;
+            margin-top: 40px;
+            
+        }
+        
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 25px 30px;
+            width: 200px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+            z-index: -1;
+            transform: rotate(45deg);
+        }
+        
+        .social-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-card:hover .icon-container {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .icon-container {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 3.5rem;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+        }
+        
+        .tiktok {
+            background: linear-gradient(135deg, #69C9D0, #EE1D52);
+            color: white;
+            box-shadow: 0 8px 20px rgba(238, 29, 82, 0.3);
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .youtube {
+            background: linear-gradient(135deg, #FF0000, #FF0000);
+            color: rgb(255, 255, 255);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+        }
+        
+        .facebook {
+            background: linear-gradient(135deg, #4267B2, #4267B2);
+            color: white;
+            box-shadow: 0 8px 20px rgba(66, 103, 178, 0.3);
+        }
+        
+        .social-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 10px;
+            color: white;
+            
+        }
+        
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            width: 70%;
+            margin: 50px auto;
+            border-radius: 2px;
+        }
+        #mon-id{
+            color: #d8d8d7;
+            font-size: 1.9rem;
+            margin-right: 10px;
+        }
+        
+        .message {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 40px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .message p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .message i {
+            color: #fdbb2d;
+            font-size: 1.8rem;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            font-size: 1.1rem;
+            opacity: 0.7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .footer i {
+            color: #fdbb2d;
+        }
+        
+        /* Animation de flottement */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .social-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .social-card:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .social-card:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        .social-card:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.7rem;
+            }
+            
+            .social-icons {
+                gap: 25px;
+            }
+            
+            .social-card {
+                width: 180px;
+                padding: 20px;
+            }
+            
+            .icon-container {
+                width: 85px;
+                height: 85px;
+                font-size: 3rem;
+            }
+            
+            .container {
+                padding: 40px 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .social-icons {
+                gap: 20px;
+            }
+            
+            .social-card {
+                width: 160px;
+                padding: 18px;
+            }
+            
+            .icon-container {
+                width: 80px;
+                height: 80px;
+                font-size: 2.8rem;
+            }
+            
+            .social-name {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 650px) {
+            .social-icons {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .social-card {
+                width: 100%;
+                max-width: 350px;
+                flex-direction: row;
+                justify-content: flex-start;
+                text-align: left;
+                padding: 20px 30px;
+            }
+            
+            .icon-container {
+                margin-right: 25px;
+                margin-bottom: 0;
+                width: 70px;
+                height: 70px;
+                font-size: 2.5rem;
+            }
+            
+            h1 {
+                font-size: 2.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .social-card {
+                padding: 15px 20px;
+            }
+            
+            .icon-container {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+                margin-right: 20px;
+            }
+            
+            .social-name {
+                font-size: 1.3rem;
+            }
+            
+            .message {
+                padding: 25px 20px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue chez</h1>
+        <img src="REMOVE.png" class="dumiya-logo" alt="">
+        <p class="subtitle"><span>Je suis loin, mais restons connectés</span></p>
+        
+        <div class="social-section">
+            <h2 class="section-title">Retrouvez-moi sur les réseaux</h2>
+            <div>
+
+            </div>
+            
+            <div class="social-icons">
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@dumiya.cd?_t=ZM-8yDNUxuVQIQ&_r=1" target="_blank" class="social-card">
+                    <div class="icon-container tiktok">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <span class="social-name">Dumiya.cd</span>
+                </a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/message/ZZ4Y4HGT6JGUF1?src=qr" target="_blank" class="social-card">
+                    <div class="icon-container whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span class="social-name">Dumiya</span>
+                </a>
+                
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@Dumiyaa" target="_blank" class="social-card">
+                    <div class="icon-container youtube">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <span class="social-name">Dumiya</span>
+                </a>
+                
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/share/1YdqxE7AS2/?mibextid=wwXIfr" target="_blank" class="social-card">
+                    <div class="icon-container facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <span class="social-name">Dumiya</span>
+                </a>
+                 <!-- WhatsApp -->
+                <a href="wa.me/243985195655" target="_blank" class="social-card">
+                    <div class="icon-container whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span class="social-name">WhatsApp tiktok</span>
+                </a>
+                <a href="https://dumiya.com/" target="_blank" class="social-card">
+                    <div class="">
+                        <i class="fas fa-globe-africa" id="mon-id"></i>
+                    </div>
+                    <span class="social-name" id="visiter-dumiya">visiter dumiya</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- <div class="divider"></div>
+        
+        <div class="message">
+            <p><i class="fas fa-globe-africa"></i> Retrouvez tous mes contenus sur les réseaux sociaux !</p>
+            <p><i class="fas fa-share-alt"></i> Partagez et restons en contact malgré la distance.</p>
+            <p><i class="fas fa-heart"></i> Merci pour votre soutien et votre fidélité !</p>
+        </div>
+        
+        <div class="footer">
+            <i class="fas fa-code"></i> Créé avec passion pour Dumiya
+        </div> -->
+    </div>
+    
+    <script>
+        // Effet d'étincelles au survol des cartes
+        document.querySelectorAll('.social-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const colors = {
+                    'tiktok': ['#69C9D0', '#EE1D52'],
+                    'whatsapp': ['#25D366', '#128C7E'],
+                    'youtube': ['#FF0000', '#FF0000'],
+                    'facebook': ['#4267B2', '#4267B2']
+                };
+                
+                const type = this.querySelector('.icon-container').classList[1];
+                
+                // Créer des étincelles
+                for (let i = 0; i < 10; i++) {
+                    const spark = document.createElement('div');
+                    spark.style.position = 'absolute';
+                    spark.style.width = '5px';
+                    spark.style.height = '5px';
+                    spark.style.background = `linear-gradient(45deg, ${colors[type][0]}, ${colors[type][1]})`;
+                    spark.style.borderRadius = '50%';
+                    spark.style.left = `${Math.random() * 100}%`;
+                    spark.style.top = `${Math.random() * 100}%`;
+                    spark.style.opacity = '0';
+                    spark.style.zIndex = '2';
+                    spark.style.animation = `sparkle 1s ease-out ${i*0.1}s`;
+                    
+                    this.appendChild(spark);
+                    
+                    setTimeout(() => {
+                        spark.remove();
+                    }, 1000);
+                }
+            });
+        });
+        
+        // Ajouter l'animation des étincelles au CSS
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes sparkle {
+                0% { opacity: 0; transform: scale(0); }
+                50% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: translate(calc(-50% + ${Math.random()*100 - 50}px), calc(-50% + ${Math.random()*100 - 50}px)) scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
